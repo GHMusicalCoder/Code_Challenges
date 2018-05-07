@@ -123,3 +123,47 @@ def no_space(x):
     return x.replace(' ', '')
 
 
+# B16 Correct the mistakes of the character recognition software -
+# https://www.codewars.com/kata/correct-the-mistakes-of-the-character-recognition-software
+def correct(string):
+    fixes = {'0': 'O', '5': 'S', '1': 'I'}
+    issue = '015'
+    result = ''
+    for s in string:
+        if s in issue:
+            result += fixes[s]
+        else:
+            result += s
+    return result
+
+
+def correct_bp(string):
+    return string.translate(str.maketrans("501", "SOI"))
+
+
+# B17 Remove First and Last Character - https://www.codewars.com/kata/remove-first-and-last-character
+def remove_char(s):
+    return s[1:-1]
+
+
+# B18 Basic Mathematical Operations - https://www.codewars.com/kata/basic-mathematical-operations
+def basic_op(operator, value1, value2):
+    return eval('{}{}{}'.format(value1, operator, value2))
+
+
+# B19 Opposite number - https://www.codewars.com/kata/opposite-number
+def opposite(number):
+    return number * -1
+
+
+def opposite_bp(number):
+    return -number
+
+
+# B20 Fake Binary - https://www.codewars.com/kata/fake-binary
+def fake_bin(x):
+    return ''.join(['0' if int(d) < 5 else '1' for d in x])
+
+
+def fake_bin_bp(x):
+    return ''.join('0' if c < '5' else '1' for c in x)
