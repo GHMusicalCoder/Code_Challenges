@@ -61,8 +61,65 @@ def zeroFuel_bp(distance_to_pump, mpg, fuel_left):
     return distance_to_pump <= mpg * fuel_left
 
 
-#B10 Convert boolean values to strings 'Yes' or 'No'. -
+# B10 Convert boolean values to strings 'Yes' or 'No'. -
 # https://www.codewars.com/kata/convert-boolean-values-to-strings-yes-or-no
 def bool_to_word(boolean):
     return 'Yes' if boolean else 'No'
+
+
+# B11 Sleigh Authentication - https://www.codewars.com/kata/sleigh-authentication
+class Sleigh(object):
+    def authenticate(self, name, password):
+        return True if name == 'Santa Claus' and password == 'Ho Ho Ho!' else False
+
+
+class Sleigh_bp(object):
+    def authenticate(self, name, password):
+        return name == 'Santa Claus' and password == 'Ho Ho Ho!'
+
+
+# B12 Convert number to reversed array of digits
+# https://www.codewars.com/kata/convert-number-to-reversed-array-of-digits
+def digitize(n):
+    return [int(i) for i in str(n)[::-1]]
+
+
+def digitize_bp(n):
+    return map(int, str(n)[::-1])
+
+
+# B13 Exclamation marks series #11: Replace all vowel to exclamation mark in the sentence -
+# https://www.codewars.com/kata/exclamation-marks-series-number-11-replace-all-vowel-to-exclamation-mark-in-the-sentence
+def replace_exclamation(s):
+    vowels = ['A', 'E', "I", 'O', 'U']
+    result = ''
+    for letter in s:
+        if letter.upper() in vowels:
+            result += '!'
+        else:
+            result += letter
+    return result
+
+
+def replace_exclamation_bp(s):
+    return ''.join('!' if c in 'aeiouAEIOU' else c for c in s)
+
+
+# B14 Number of People in the Bus - https://www.codewars.com/kata/number-of-people-in-the-bus
+def number(bus_stops):
+    count = 0
+    for stop in bus_stops:
+        count += stop[0]
+        count -= stop[1]
+    return count
+
+
+def number_bp(bus_stops):
+    return sum([stop[0] - stop[1] for stop in bus_stops])
+
+
+# B15 Remove String Spaces - https://www.codewars.com/kata/remove-string-spaces
+def no_space(x):
+    return x.replace(' ', '')
+
 
