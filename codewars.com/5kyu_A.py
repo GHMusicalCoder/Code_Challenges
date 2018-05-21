@@ -55,7 +55,7 @@ def productFib(prod):
 def bp_productFib(prod):
     a, b = 0, 1
     while prod > a * b:
-    a, b = b, a + b
+        a, b = b, a + b
     return [a, b, prod == a * b]
 
 
@@ -70,8 +70,8 @@ def zeros(n):
 
 
 def bp_zeros(n):
-  x = n/5
-  return x+zeros(x) if x else 0
+    x = n/5
+    return x+zeros(x) if x else 0
 
 
 # A04 -
