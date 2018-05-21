@@ -96,19 +96,72 @@ def toJadenCase_bp(string):
     return " ".join(w.capitalize() for w in string.split())
 
 
-# A11 -
+# A11 - Histogram - H1 - https://www.codewars.com/kata/histogram-h1
+def histogram(results):
+    results = results[::-1]
+    string = ""
+    for i, v in enumerate(results):
+        string += str(6 - i) + "|"
+        if v > 0:
+            string += "#" * v
+            string += " " + str(v)
+        string += "\n"
+
+    return string
 
 
-# A12 -
+def histogram_bp(results):
+    return ''.join([str(j) + '|' + i * '#' + (' ' + str(i)) * (i > 0) + '\n' for i, j in zip(results[::-1], range(6, 0, -1))])
 
 
-# A13 -
+# A12 - Number climber - https://www.codewars.com/kata/number-climber
+def climb(n):
+    my_list = [n]
+    while n > 0:
+        if n % 2 == 0:
+            my_list.append(n // 2)
+            n //= 2
+        elif n > 1:
+            n -= 1
+        else:
+            n = 0
+    return sorted(my_list)
 
 
-# A14 -
+def climb_bp(n):
+    return [1] if n == 1 else climb(int(n/2)) + [n]
 
 
-# A15 -
+# A13 - Is this a triangle? - https://www.codewars.com/kata/is-this-a-triangle
+def is_triangle(a, b, c):
+    if a > 0 and b > 0 and c > 0 and a + b > c and b + c > a and a + c > b:
+        return True
+
+    return False
+
+
+def is_triangle_bp(a, b, c):
+    return (a<b+c) and (b<a+c) and (c<a+b)
+
+
+# A14 - Credit Card Mask - https://www.codewars.com/kata/credit-card-mask
+# return masked string
+def maskify(cc):
+    length = len(cc)
+    if length < 5:
+        return cc
+    else:
+        return '#' * (length - 4) + cc[-4:]
+
+
+def maskify_bp(cc):
+    return "#"*(len(cc)-4) + cc[-4:]
+
+
+# A15 - Exes and Ohs - https://www.codewars.com/kata/exes-and-ohs
+def xo(s):
+    s = s.lower()
+    return s.count('x') == s.count('o')
 
 
 # A16 -
