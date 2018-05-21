@@ -60,19 +60,40 @@ def factorial(n):
 from math import factorial
 
 
-# A06 -
+# A06 - Sentence to words - https://www.codewars.com/kata/sentence-to-words
+def splitSentence(s):
+    return s.split()
 
 
-# A07 -
+# A07 - Reverse list - https://www.codewars.com/kata/reverse-list
+def reverse_list(lst):
+    return lst[::-1]
 
 
-# A08 -
+# A08 - Keep the Order - https://www.codewars.com/kata/keep-the-order
+def keep_order(ary, val):
+    for i, value in enumerate(ary):
+        if value >= val:
+            return i
+    return len(ary)
 
 
-# A09 -
+# best practice for A08
+from bisect import bisect_left as keep_order
 
 
-# A10 -
+# A09 - Naming Files - https://www.codewars.com/kata/naming-files
+def name_file(fmt, nbr, start):
+    return [fmt.replace("<index_no>", str(i+start)) for i in range(nbr)] if nbr > 0 and int(nbr) == nbr and int(start) == start else []
+
+
+# A10 - Jaden Casing Strings - https://www.codewars.com/kata/jaden-casing-strings
+def toJadenCase(string):
+    return ' '.join(map(lambda x: x.capitalize(), string.split()))
+
+
+def toJadenCase_bp(string):
+    return " ".join(w.capitalize() for w in string.split())
 
 
 # A11 -
