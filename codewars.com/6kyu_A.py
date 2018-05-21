@@ -172,7 +172,6 @@ def find_it(seq):
 
 # A12 - Decode the Morse code - https://www.codewars.com/kata/decode-the-morse-code
 def decodeMorse(morseCode):
-    # ToDo: Accept dots, dashes and spaces, return human-readable message
     result = ''
     morseCode = morseCode.strip(' ')
     words = morseCode.split('   ')
