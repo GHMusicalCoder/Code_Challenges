@@ -78,19 +78,89 @@ def bp_tribonacci(signature, n):
   return res
 
 
-# A06 -
+# A06 - Format a string of names like 'Bart, Lisa & Maggie'. -
+# https://www.codewars.com/kata/format-a-string-of-names-like-bart-lisa-and-maggie
+def namelist(names):
+    if len(names) == 0:
+        return ''
+    elif len(names) == 1:
+        return names[0]['name']
+    else:
+        justnames = [name['name'] for name in names]
+        name_list = justnames[:-2]
+        name_list.append(' & '.join(justnames[-2:]))
+        return ', '.join(name_list)
 
 
-# A07 -
+def bp_namelist(names):
+    if len(names) > 1:
+        return '{} & {}'.format(', '.join(name['name'] for name in names[:-1]), names[-1]['name'])
+    elif names:
+        return names[0]['name']
+    else:
+        return ''
 
 
-# A08 -
+# A07 - Stop gninnipS My sdroW! - https://www.codewars.com/kata/stop-gninnips-my-sdrow
+def spin_words(sentence):
+    words = sentence.split(' ')
+    result = []
+    for word in words:
+        if len(word) > 4:
+            result.append(word[::-1])
+        else:
+            result.append(word)
+
+    return ' '.join(result)
 
 
-# A09 -
+def bp_spin_words(sentence):
+    return " ".join([x[::-1] if len(x) >= 5 else x for x in sentence.split(" ")])
 
 
-# A10 -
+# A08 - Find The Duplicated Number in a Consecutive Unsorted List - Tougher Version -
+# https://www.codewars.com/kata/find-the-duplicated-number-in-a-consecutive-unsorted-list-tougher-version
+def find_dup(arr):
+    # returns sum of array - sum of consecutive integers 1 - len(arr) - 1
+    return sum(arr) - ((len(arr) - 1) * len(arr) // 2)
+
+
+def bp_find_dup(arr):
+    return sum(arr) - sum(range(1, max(arr)+1))
+
+
+# A09 - Persistent Bugger. - https://www.codewars.com/kata/persistent-bugger
+def persistence(n):
+    arr = list(str(n))
+    if len(arr) == 1:
+        return 0
+    return 1 + persistence(reduce(lambda x, y: int(x) * int(y), arr))
+
+
+import operator
+
+
+def persistence(n):
+    i = 0
+    while n>=10:
+        n=reduce(operator.mul,[int(x) for x in str(n)],1)
+        i+=1
+    return i
+
+
+# A10 - Build Tower - https://www.codewars.com/kata/build-tower
+def tower_builder(n_floors):
+    width = 1 + (n_floors - 1) * 2
+    rpt = 1
+    result = []
+    for _ in range(n_floors):
+        result.append(('*' * rpt).center(width, ' '))
+        rpt += 2
+    return result
+
+
+def bp_tower_builder(n):
+    return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
 
 
 # A11 -
