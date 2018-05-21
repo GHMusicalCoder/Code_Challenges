@@ -107,7 +107,10 @@ def bp_to_leet_speak(str):
     return str.translate(str.maketrans("ABCEGHILOSTZ", "@8(36#!10$72"))
 
 
-# B09 -
+# B09 - Minimize Sum Of Array (Array Series #1) -
+# https://www.codewars.com/kata/minimize-sum-of-array-array-series-number-1
+def min_sum(arr):
+    return sum(x * y for x, y in zip(sorted(arr)[:int(len(arr) / 2)], list(sorted(arr)[int(len(arr) / 2)*-1:])[::-1]))
 
 
 # B10 -
