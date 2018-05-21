@@ -69,3 +69,45 @@ def expression_matter(a, b, c):
     return max(a+b+c, (a+b)*c, a*(b+c), a*b*c)
 
 
+# C09 - Get the mean of an array - https://www.codewars.com/kata/get-the-mean-of-an-array
+def get_average(marks):
+    return sum(marks) / len(marks)
+
+
+# C10 - Sort and Star - https://www.codewars.com/kata/sort-and-star
+def two_sort(array):
+    return "***".join(l for l in sorted(array)[0])
+
+
+def bp_two_sort(array):
+    return '***'.join(min(array))
+
+
+# C11 -
+
+
+# C12 -
+
+
+# C13 -
+
+
+# C14 -
+
+
+# C15 -
+
+
+# C16 -
+
+
+# C17 -
+
+
+# C18 -
+
+
+# C19 -
+
+
+# C20 -
