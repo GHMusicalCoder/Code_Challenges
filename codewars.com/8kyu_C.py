@@ -49,3 +49,23 @@ def reverseseq_bp(n):
     return list(range(n, 0, -1))
 
 
+# C06 Sum of positive - https://www.codewars.com/kata/sum-of-positive
+def positive_sum(arr):
+    return sum([a for a in arr if a > 0]) if arr else 0
+
+
+def positive_sum_bp(arr):
+    return sum(x for x in arr if x > 0)
+
+
+# C07 The Feast of Many Beasts - https://www.codewars.com/kata/the-feast-of-many-beasts
+def feast(beast, dish):
+    # your code here
+    return beast[0] == dish[0] and beast[-1] == dish[-1]
+
+
+# C08 Expressions Matter - https://www.codewars.com/kata/expressions-matter
+def expression_matter(a, b, c):
+    return max(a+b+c, (a+b)*c, a*(b+c), a*b*c)
+
+
