@@ -164,16 +164,49 @@ def xo(s):
     return s.count('x') == s.count('o')
 
 
-# A16 -
+# A16 - Find The Duplicated Number in a Consecutive Unsorted List -
+# https://www.codewars.com/kata/find-the-duplicated-number-in-a-consecutive-unsorted-list
+def find_dup(arr):
+    arr.sort()
+    for i in range(1, len(arr)+1):
+        if arr[i-1] != i:
+            return arr[i-1]
 
 
-# A17 -
+def find_dup_bp(arr):
+    return (i for i in arr if arr.count(i) > 1).next()
 
 
-# A18 -
+# A17 - Sum of two lowest positive integers - https://www.codewars.com/kata/sum-of-two-lowest-positive-integers
+def sum_two_smallest_numbers(numbers):
+    lowest = min(numbers)
+    numbers.remove(lowest)
+    return lowest + min(numbers)
 
 
-# A19 -
+def sum_two_smallest_numbers_bp(numbers):
+    return sum(sorted(numbers)[:2])
 
 
-# A20 -
+# A18 - Shortest Word - https://www.codewars.com/kata/shortest-word
+def find_short(s):
+    return min([len(w) for w in s.split(' ')])
+
+
+# A19 - All Inclusive? - https://www.codewars.com/kata/all-inclusive
+def contain_all_rots(strng, arr):
+    if strng:
+        for _ in range(len(strng)):
+            strng = strng[-1] + strng[:-1]
+            if strng not in arr:
+                return False
+    return True
+
+
+# A20 - Sort array by string length - https://www.codewars.com/kata/sort-array-by-string-length
+def sort_by_length(arr):
+    return sorted(arr, key=lambda x: len(x))
+
+
+def sort_by_length_bp(arr):
+    return sorted(arr, key=len)
