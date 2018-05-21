@@ -113,8 +113,18 @@ def min_sum(arr):
     return sum(x * y for x, y in zip(sorted(arr)[:int(len(arr) / 2)], list(sorted(arr)[int(len(arr) / 2)*-1:])[::-1]))
 
 
-# B10 -
+# B10 - Product Of Maximums Of Array (Array Series #2) -
+# https://www.codewars.com/kata/product-of-maximums-of-array-array-series-number-2
+def max_product(lst, n_largest_elements):
+    return eval('*'.join(str(item) for item in sorted(lst, reverse=True)[:n_largest_elements]))
 
+
+def bp_max_product(lst, n_largest_elements):
+    lst = sorted(lst, reverse=True)[:n_largest_elements]
+    value = 1
+    for l in lst:
+        value *= l
+    return value
 
 # B11 -
 
