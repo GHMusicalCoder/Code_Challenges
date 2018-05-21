@@ -163,10 +163,33 @@ def bp_tower_builder(n):
     return [("*" * (i*2-1)).center(n*2-1) for i in range(1, n+1)]
 
 
-# A11 -
+# A11 - Find the odd int - https://www.codewars.com/kata/find-the-odd-int
+def find_it(seq):
+    for i in seq:
+        if seq.count(i) % 2 == 1:
+            return i
 
 
-# A12 -
+# A12 - Decode the Morse code - https://www.codewars.com/kata/decode-the-morse-code
+def decodeMorse(morseCode):
+    # ToDo: Accept dots, dashes and spaces, return human-readable message
+    result = ''
+    morseCode = morseCode.strip(' ')
+    words = morseCode.split('   ')
+    for word in words:
+        letters = word.split(' ')
+        for letter in letters:
+            result += MORSE_CODE[letter]
+
+        result += ' '
+
+    return result[:-1]
+
+    # return morseCode.replace('.', MORSE_CODE['.']).replace('-', MORSE_CODE['-']).replace(' ', '')
+
+
+def bp_decodeMorse(morseCode):
+    return ' '.join(''.join(MORSE_CODE[letter] for letter in word.split(' ')) for word in morseCode.strip().split('   '))
 
 
 # A13 -
