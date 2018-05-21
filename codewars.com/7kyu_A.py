@@ -59,3 +59,47 @@ def factorial(n):
 # best practice for factorial:
 from math import factorial
 
+
+# A06 -
+
+
+# A07 -
+
+
+# A08 -
+
+
+# A09 -
+
+
+# A10 -
+
+
+# A11 -
+
+
+# A12 -
+
+
+# A13 -
+
+
+# A14 -
+
+
+# A15 -
+
+
+# A16 -
+
+
+# A17 -
+
+
+# A18 -
+
+
+# A19 -
+
+
+# A20 -
