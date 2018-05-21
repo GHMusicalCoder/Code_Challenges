@@ -71,13 +71,40 @@ def bp_longest(words):
     return max(map(len, words))
 
 
-# B06 -
+# B06 - Find the next perfect square! - https://www.codewars.com/kata/find-the-next-perfect-square
+def find_next_square(sq):
+    # Return the next square if sq is a square, -1 otherwise
+    return ((sq ** 0.5) + 1) ** 2 if (sq ** 0.5).is_integer() else -1
 
 
-# B07 -
+def bp_find_next_square(sq):
+    root = sq ** 0.5
+    if root.is_integer():
+        return (root + 1)**2
+    return -1
 
 
-# B08 -
+# B07 - Sort Numbers - https://www.codewars.com/kata/sort-numbers
+def solution(nums):
+    return [] if nums is None else sorted(nums, key=lambda i: i)
+
+
+def bp_solution(nums):
+    return sorted(nums) if nums else []
+
+
+# B08 - ToLeetSpeak - https://www.codewars.com/kata/toleetspeak
+leet = { 'A' : '@', 'B' : '8', 'C' : '(', 'D' : 'D', 'E' : '3', 'F' : 'F', 'G' : '6', 'H' : '#', 'I' : '!',
+  'J' : 'J', 'K' : 'K', 'L' : '1', 'M' : 'M', 'N' : 'N', 'O' : '0', 'P' : 'P', 'Q' : 'Q', 'R' : 'R', 'S' : '$',
+  'T' : '7', 'U' : 'U', 'V' : 'V', 'W' : 'W',  'X' : 'X', 'Y' : 'Y', 'Z' : '2', ' ': ' ' }
+
+
+def to_leet_speak(str):
+    return ''.join([leet[s] for s in str])
+
+
+def bp_to_leet_speak(str):
+    return str.translate(str.maketrans("ABCEGHILOSTZ", "@8(36#!10$72"))
 
 
 # B09 -
