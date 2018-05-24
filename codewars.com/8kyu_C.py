@@ -83,16 +83,46 @@ def bp_two_sort(array):
     return '***'.join(min(array))
 
 
-# C11 -
+# C11 - altERnaTIng cAsE <=> ALTerNAtiNG CaSe -
+# https://www.codewars.com/kata/alternating-case-%3C-equals-%3E-alternating-case
+def to_alternating_case(string):
+    temp = ''
+    for s in string:
+        if s.isalpha():
+            if s.islower():
+                temp += s.upper()
+            else:
+                temp += s.lower()
+        else:
+            temp += s
+    return temp
 
 
-# C12 -
+def bp_to_alternating_case(string):
+    return string.swapcase()
 
 
-# C13 -
+# C12 - Geometry Basics: Circle Circumference in 2D -
+# https://www.codewars.com/kata/geometry-basics-circle-circumference-in-2d
+def circle_circumference(circle):
+    from math import pi
+    return round(2 * pi * circle.radius, 6)
 
 
-# C14 -
+# C13 - Grasshopper - Terminal game combat function -
+# https://www.codewars.com/kata/grasshopper-terminal-game-combat-function-1
+def combat(health, damage):
+    return health - damage if damage < health else 0
+
+
+def bp_combat(health, damage):
+    return max(0, health-damage)
+
+
+# C14 - Training JS #18: Methods of String object--concat() split() and its good friend join() -
+# https://www.codewars.com/kata/training-js-number-18-methods-of-string-object-concat-split-and-its-good-friend-join
+def split_and_merge(string, sp):
+    return " ".join(sp.join(word) for word in string.split())
 
 
 # C15 -
