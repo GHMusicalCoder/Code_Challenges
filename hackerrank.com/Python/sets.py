@@ -121,7 +121,7 @@ print(output)
 # The Captain's Room - https://www.hackerrank.com/challenges/py-the-captains-room
 family_count, room_array = int(input()), list(map(int, input().split()))
 unique_set = set(room_array)    # distinct room # set
-# every room but the capt room is in the array family_count # of times
+# every room but the captains room is in the array family_count # of times
 # so if we take the set of the array (the distinct #s) and multiply it by our count
 # then subtract from that sum of the array, the different will be family_count-1 X the single room #
 print((sum(unique_set) * family_count - (sum(room_array))) // (family_count - 1))
