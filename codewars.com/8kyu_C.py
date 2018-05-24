@@ -125,7 +125,7 @@ def split_and_merge(string, sp):
     return " ".join(sp.join(word) for word in string.split())
 
 
-# C15 - xxx
+# C15 - xxxxx
 
 
 # C16 -
