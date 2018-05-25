@@ -191,7 +191,17 @@ def bp_decodeMorse(morseCode):
     return ' '.join(''.join(MORSE_CODE[letter] for letter in word.split(' ')) for word in morseCode.strip().split('   '))
 
 
-# A13 -
+# A13 - Financing a purchase - http://www.codewars.com/kata/financing-a-purchase/train/python
+def amort(rate, bal, term, num_payments):
+    rate = rate / 100 / 12
+    pmt = (rate * bal) / (1 - (1 + rate)**(term * -1))
+    loan = [[bal, 0, 0, bal]]
+    for i in range(0, num_payments + 1):
+        int = round(loan[i][3] * rate, 2)
+        prin = pmt - int
+        loan.append([loan[i][3], prin, round(int), loan[i][3] - prin])
+    return "num_payment {0} c {1:.0f} princ {2:.0f} int {3:.0f} balance {4:.0f}".format(num_payments, pmt, loan[num_payments][1], loan[num_payments][2], loan[num_payments][3])
+    # this gave me one bad entry due to rounding
 
 
 # A14 -
