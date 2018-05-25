@@ -126,7 +126,30 @@ def bp_max_product(lst, n_largest_elements):
         value *= l
     return value
 
-# B11 -
+
+# B11 - Sum of differences between products and LCMs -
+# http://www.codewars.com/kata/sum-of-differences-between-products-and-lcms
+def sum_differences_between_products_and_LCMs(pairs):
+    def gcd(a, b):
+        while b > 0:
+            a, b = b, a % b
+        return a
+
+    def lcm(a, b):
+        return a * b / gcd(a, b)
+
+    result = 0
+    for pair in pairs:
+        value_prod = pair[0] * pair[1]
+        value_lcm = lcm(pair[0], pair[1]) if pair[1] > 0 else 0
+        result += value_prod - value_lcm
+
+    return result
+
+
+def bp_sum_differences_between_products_and_LCMs(pairs):
+    from math import gcd
+    return sum(a*b - a*b//gcd(a, b) for a, b in pairs if a and b)
 
 
 # B12 -
