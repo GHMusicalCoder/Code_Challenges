@@ -125,7 +125,9 @@ def split_and_merge(string, sp):
     return " ".join(sp.join(word) for word in string.split())
 
 
-# C15 -
+# C15 - Thinkful - Logic Drills: Traffic light - http://www.codewars.com/kata/thinkful-logic-drills-traffic-light
+def update_light(current):
+    return {'green': 'yellow', 'yellow': 'red', 'red': 'green'}[current]
 
 
 # C16 -
