@@ -152,7 +152,21 @@ def bp_sum_differences_between_products_and_LCMs(pairs):
     return sum(a*b - a*b//gcd(a, b) for a, b in pairs if a and b)
 
 
-# B12 -
+# B12 - Next Prime - http://www.codewars.com/kata/next-prime/train/python
+def next_prime(n):
+    for poss in range(n+1, 2*n):
+        for i in range(2, poss):
+            if poss % i == 0:
+                break
+        else:
+            return poss
+    return 2
+
+
+def bp_nextPrime(n):
+    while True:
+        n += 1
+        if n == 2 or (n > 2 and n % 2 and all(n % i for i in range(3, int(n**0.5) + 1, 2))): return n
 
 
 # B13 -
