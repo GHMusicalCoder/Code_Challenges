@@ -169,7 +169,25 @@ def bp_nextPrime(n):
         if n == 2 or (n > 2 and n % 2 and all(n % i for i in range(3, int(n**0.5) + 1, 2))): return n
 
 
-# B13 -
+# B13 - Balanced Number (Special Numbers Series #1 ) -
+# https://www.codewars.com/kata/balanced-number-special-numbers-series-number-1
+def balanced_num(number):
+    def sum_digits(digits):
+        return sum([int(x) for x in digits])
+
+    number = str(number)
+    middle = len(number) // 2 if len(number) % 2 else (len(number) // 2) - 1
+
+    if len(number) < 3:
+        return "Balanced"
+    else:
+        return "Balanced" if sum_digits(number[:middle]) == sum_digits(number[(middle * -1):]) else "Not Balanced"
+
+
+def bp_balanced_num(n):
+    if n < 100: return 'Balanced'
+    n = [int(i) for i in str(n)]
+    return 'Balanced' if sum(n[:int(len(n)/2)-1+(len(n)%2)]) == sum(n[int(len(n)/2)+1:]) else 'Not Balanced'
 
 
 # B14 -
