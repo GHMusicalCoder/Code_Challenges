@@ -130,7 +130,9 @@ def update_light(current):
     return {'green': 'yellow', 'yellow': 'red', 'red': 'green'}[current]
 
 
-# C16 -
+# C16 - Find the smallest integer in the array - https://www.codewars.com/kata/find-the-smallest-integer-in-the-array
+def find_smallest_int(arr):
+    return min(arr)
 
 
 # C17 -
