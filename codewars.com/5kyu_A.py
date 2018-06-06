@@ -74,7 +74,25 @@ def bp_zeros(n):
     return x+zeros(x) if x else 0
 
 
-# A04 -
+# A04 - All Star Code Challenge #19 - https://www.codewars.com/kata/all-star-code-challenge-number-19/train/python
+def slogan_maker(array):
+    new_array = []
+    for arr in array:
+        if arr not in new_array:
+            new_array.append(arr)
+    # array = list(set(array))
+    array = new_array
+    if len(array) == 1:
+        return array
+    from itertools import permutations as p
+    return [' '.join(item) for item in list(p(array))]
+
+
+from itertools import permutations
+
+
+def bp_slogan_maker(arr):
+    return list(map(' '.join, permutations(dict(zip(arr, range(len(arr)))))))
 
 
 # A05 -
