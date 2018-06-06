@@ -204,7 +204,19 @@ def amort(rate, bal, term, num_payments):
     # this gave me one bad entry due to rounding
 
 
-# A14 -
+# A14 - Split Strings - https://www.codewars.com/kata/split-strings/train/python
+def solution(s):
+    result = []
+    for i in range(0, len(s), 2):
+        if len(s[i:i+2]) == 2:
+            result.append(s[i:i+2])
+        else:
+            result.append(s[i] + "_")
+    return result
+
+
+def bp_solution(s):
+    return [s[x:x+2] if x < len(s) - 1 else s[-1] + "_" for x in range(0, len(s), 2)]
 
 
 # A15 -
