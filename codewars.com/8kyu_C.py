@@ -135,7 +135,13 @@ def find_smallest_int(arr):
     return min(arr)
 
 
-# C17 -
+# C17 - Is it a number? - https://www.codewars.com/kata/is-it-a-number
+def isDigit(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
 
 
 # C18 -
