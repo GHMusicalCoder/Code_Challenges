@@ -144,11 +144,24 @@ def isDigit(string):
         return False
 
 
-# C18 -
+# C18 - Even or Odd - https://www.codewars.com/kata/even-or-odd
+def even_or_odd(number):
+    return "Even" if number % 2 == 0 else "Odd"
 
 
+def bp_even_or_odd(number):
+    return 'Odd' if number % 2 else 'Even'
 
-# C19 -
+
+# C19 - Grasshopper - Personalized Message - https://www.codewars.com/kata/grasshopper-personalized-message
+def greet(name, owner):
+    return "Hello boss" if name == owner else "Hello guest"
 
 
-# C20 -
+# C20 - Is he gonna survive? - https://www.codewars.com/kata/is-he-gonna-survive
+def hero(bullets, dragons):
+    return True if bullets > dragons and bullets // dragons >= 2 else False
+
+
+def bp_hero(bullets, dragons):
+    return bullets >= dragons * 2
